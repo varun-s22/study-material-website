@@ -11,22 +11,21 @@ function App() {
   };
   const handleUpload = async (e) => {
     e.preventDefault();
-    console.log("clicked");
-    console.log(file);
+
     const formData = new FormData();
     formData.append("file", file);
-    const res = await fetch("http://localhost:5000/upload", {
+    formData.append("title", e.target.title.value);
+    await fetch("http://localhost:5000/api/add-study-material", {
       method: "POST",
       body: formData,
     });
-    const response = await res.json();
-    console.log(response);
   };
 
   return (
     <>
       <form onSubmit={handleUpload}>
         <input type="file" id="file" name="file" onChange={handleChange} />
+        <input type="text" id="title" name="title" required />
         <button type="submit">Upload</button>
       </form>
     </>

@@ -3,7 +3,7 @@ const schema = mongoose.Schema;
 
 const studySchema = new schema({
   id: {
-    type: Number,
+    type: String,
     required: true,
     unique: true,
   },

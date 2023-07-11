@@ -2,10 +2,14 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
-const allStudyMaterials = require("./seeder");
+const path = require("path");
+const { randomUUID } = require("crypto");
 const fileUpload = require("express-fileupload");
+const { moveFile } = require("./utils");
+const Study = require("./models/study");
 const port = process.env.PORT || 5000;
 
+app.use("/public", express.static(path.join(__dirname, "public")));
 app.use(
   cors({
     origin: "http://localhost:5173",
@@ -14,8 +18,6 @@ app.use(
     credentials: true,
   })
 );
-
-app.use(express.static("public"));
 
 app.use(
   fileUpload({
@@ -33,25 +35,52 @@ app.get("/", (req, res) => {
   res.send({ message: "Server is up!!" });
 });
 
-app.get("/api/all-study-materials", (req, res) => {
-  res.send({
-    message: "All study materials",
-    data: allStudyMaterials,
-  });
+app.get("/api/get-study-material/:id", async (req, res) => {
+  const id = req.params.id;
+  try {
+    const studyMaterial = await Study.findOne({ id });
+    res.status(200).send({
+      message: "Study material",
+      data: studyMaterial,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(400).send({ message: "Could not get study material" });
+  }
 });
 
-app.post("/api/add-study-material", (req, res) => {
-  console.log(req.body);
-  res.send({
-    message: "Add study material",
-  });
+app.get("/api/all-study-materials", async (req, res) => {
+  try {
+    const allStudyMaterials = await Study.find({});
+    res.status(200).send({
+      message: "All study materials",
+      data: allStudyMaterials,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(400).send({ message: "Could not get study material" });
+  }
 });
 
-app.post("/upload", (req, res) => {
-  console.log(req.files);
-  res.send({
-    message: "File uploaded",
-  });
+app.post("/api/add-study-material", async (req, res) => {
+  const attachment = req?.files?.file;
+  const studyMaterial = req.body;
+  if (attachment) {
+    const newPath = moveFile(
+      attachment,
+      "public/uploads/" + attachment.tempFilePath.split("-").at(-1)
+    );
+    studyMaterial.attachment_url = newPath;
+  }
+  studyMaterial.id = randomUUID();
+  try {
+    const res = await Study.create(studyMaterial);
+    console.log("Added study material", res);
+  } catch (err) {
+    console.log(err);
+    res.status(400).send({ message: "Could not add study material" });
+  }
+  res.status(200).send({ message: "Study material added successfully" });
 });
 
 mongoose
