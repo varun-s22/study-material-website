@@ -35,10 +35,10 @@ app.get("/", (req, res) => {
   res.send({ message: "Server is up!!" });
 });
 
-app.get("/api/get-study-material/:id", async (req, res) => {
-  const id = req.params.id;
+app.get("/api/get-study-material", async (req, res) => {
+  const query = req.query;
   try {
-    const studyMaterial = await Study.findOne({ id });
+    const studyMaterial = await Study.findOne(query);
     res.status(200).send({
       message: "Study material",
       data: studyMaterial,
