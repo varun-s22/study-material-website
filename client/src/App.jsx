@@ -1,34 +1,18 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Home from "./pages/Home";
+import Study from "./pages/Study";
+import Create from "./pages/Create";
+import NotFound from "./pages/NotFound";
 
 function App() {
-  const [file, setFile] = useState(null);
-
-  const handleChange = (e) => {
-    setFile(e.target.files[0]);
-  };
-  const handleUpload = async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("title", e.target.title.value);
-    await fetch("http://localhost:5000/api/add-study-material", {
-      method: "POST",
-      body: formData,
-    });
-  };
-
   return (
-    <>
-      <form onSubmit={handleUpload}>
-        <input type="file" id="file" name="file" onChange={handleChange} />
-        <input type="text" id="title" name="title" required />
-        <button type="submit">Upload</button>
-      </form>
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/study/:id" element={<Study />} />
+      <Route path="/create" element={<Create />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 

@@ -1,0 +1,74 @@
+.create-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 50px;
+    box-sizing: border-box;
+    justify-content: start;
+    height:68vh
+}
+.heading{
+    font-size: 5vw;
+    font-family: 'Fredericka the Great', cursive;
+    color: #EAEDEB;
+    grid-area: heading;
+    display: flex;
+    justify-content: center;
+}
+.create{
+    display:grid;
+    grid-template-areas: "header" "heading" "home";
+}
+.create-form{
+    display: grid;
+    grid-template-areas: "form-section-1 form-section-2" "form-end form-end";
+    border: 2px solid #EAEDEB;
+    height: 50vh;
+}
+.form-section{
+    display: flex;
+    grid-area: form-section;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 20px;
+}
+.form-section:nth-of-type(2n+1){
+    grid-area: form-section-1;
+}
+.form-section:nth-of-type(2n){
+    grid-area: form-section-2;
+}
+.form-end{
+    grid-area:form-end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Handlee', cursive;
+    color: #EAEDEB;
+    font-size: 1.8vw;
+}
+.form-end input{
+    border-radius: 5px;
+    padding: 2px;
+    color: #ffba42;
+    font-family: 'Handlee', cursive;
+    font-size: 1.4vw;
+}
+input #file-upload-button{
+    background-color: black;
+}
+.form-section, .form-section input, .form-section label, .form-section textarea{
+    font-family: 'Handlee', cursive;
+    color: #EAEDEB;
+    font-size: 1.8vw;
+}
+.form-section span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-section span label, .form-end span label{
+    margin-right: 10px;
+}

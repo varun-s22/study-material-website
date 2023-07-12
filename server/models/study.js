@@ -23,6 +23,9 @@ const studySchema = new schema({
   attachment_url: {
     type: String,
   },
+  category: {
+    type: String,
+  },
   date: {
     type: Date,
     default: Date.now(),

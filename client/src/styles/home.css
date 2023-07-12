@@ -1,0 +1,64 @@
+.home-content,.study-content,.create-content{
+    grid-area: home;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    padding: 0 50px;
+    box-sizing: border-box;
+    height: 89vh;
+}
+.home-content h1{
+    font-size: 5vw;
+    font-family: 'Fredericka the Great', cursive;
+    color: #EAEDEB;
+}
+.home-content h2{
+    font-size: 2.5vw;
+    font-family: 'Handlee', cursive;
+    color: #EAEDEB;
+}
+.content{
+    width: 50%;
+}
+.content button,.content h2{
+    font-family: 'Handlee', cursive;
+}
+.logo{
+    width: 30vw;
+    height: 20vw;
+}
+.home,.study,.create{
+    display:grid;
+    grid-template-areas: "header" "home";
+    font-family: 'Fredericka the Great', cursive;
+
+    background: url("/blackboard-background-and-wooden-frame-vector-15124823.jpeg");
+    background-size: 100vw 100vh;
+    color: #EAEDEB;
+}
+
+/* change the flex direction to column in phones */
+@media (max-width: 400px) {
+    .home-content,.study-content{
+        flex-direction: column;
+        height: 100vh;
+    }
+    .home-content h1{
+        font-size: 10vw;
+    }
+    .home-content h2{
+        font-size: 5vw;
+    }
+    .content{
+        width: 100%;
+        margin-bottom: 70vw;
+    }
+    .content button{
+        margin-left: 20vw;
+    }
+    .logo{
+        width: 60vw;
+        height: 40vw;
+    }
+}
