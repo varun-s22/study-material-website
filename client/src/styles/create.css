@@ -56,13 +56,15 @@
     font-family: 'Handlee', cursive;
     font-size: 1.4vw;
 }
-input #file-upload-button{
-    background-color: black;
-}
+
 .form-section, .form-section input, .form-section label, .form-section textarea{
     font-family: 'Handlee', cursive;
     color: #EAEDEB;
-    font-size: 1.8vw;
+    font-size: 1.8vw
+}
+.form-section input,.form-section textarea{
+    width: 100%;
+    color: #ffba42;
 }
 .form-section span{
     display: flex;

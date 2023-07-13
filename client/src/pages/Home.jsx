@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import "../styles/home.css";
 
@@ -13,7 +14,9 @@ const Home = () => {
             Feel empowered to contribute and share your own valuable resources,
             fostering a vibrant community of learners.
           </h2>
-          <button>Lets Get Started</button>
+          <button>
+            <Link to="/study">Lets get Started!!</Link>
+          </button>
         </div>
       </div>
     </div>

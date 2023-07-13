@@ -37,24 +37,12 @@ app.get("/", (req, res) => {
 
 app.get("/api/get-study-material", async (req, res) => {
   const query = req.query;
+  console.log(query);
   try {
-    const studyMaterial = await Study.findOne(query);
+    const studyMaterial = await Study.find(query);
     res.status(200).send({
       message: "Study material",
       data: studyMaterial,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(400).send({ message: "Could not get study material" });
-  }
-});
-
-app.get("/api/all-study-materials", async (req, res) => {
-  try {
-    const allStudyMaterials = await Study.find({});
-    res.status(200).send({
-      message: "All study materials",
-      data: allStudyMaterials,
     });
   } catch (err) {
     console.log(err);

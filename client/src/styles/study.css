@@ -1,0 +1,112 @@
+.search-study input::placeholder{
+    color: #EAEDEB;
+    font-family: 'Handlee', cursive;
+}
+.search-study input{
+    font-family: 'Handlee', cursive;
+    border: 2px solid #EAEDEB;
+    border-radius: 50px;
+    padding: 10px 20px;
+    color: #ffba42;
+    width: 30vw;
+    font-size: 2vw;
+    transition: 0.2s;
+}
+.search-study input:focus{
+    outline: none;
+    border: 2px solid #ffba42;
+}
+.search-study{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+.search-study button{
+    font-family: 'Handlee', cursive;
+    background-color: transparent;
+    border: none;
+    margin-left: -6vw;
+    margin-top: 0.5vw;
+    color: #EAEDEB;
+    transition: 0.2s;
+}
+.search-study button:hover{
+    color: #ffba42;
+    border: none;
+}
+.search-study button:focus{
+    outline: none;
+}
+svg{
+    width: 4vw;
+    height: 4vh;
+}
+.study-content{
+    display:block
+}
+.study-material{
+    border: 2px solid #EAEDEB;
+    width: max-content;
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 10px;
+    transition: 0.2s;
+    font-size: 2vw;
+}
+.study-material-download a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffba42;
+    text-decoration: none;
+    font-family: 'Handlee', cursive;
+    font-size: 1.8vw;
+}
+.study-material-download a:hover{
+    color: #EAEDEB;
+}
+.study-material-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.study-materials{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-parameters{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filter-parameters button{
+    background: transparent;
+    border-bottom: 2px solid #EAEDEB;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: #EAEDEB;
+    font-family: 'Handlee', cursive;
+    margin: 5px;
+}
+select{
+    margin-left: 10px;
+    font-family: 'Handlee', cursive;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #EAEDEB;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 2px;
+    color: #ffba42;
+    font-size: 1.2vw;
+    transition: 0.2s;
+}
+.active{
+    border-bottom: 2px solid #ffba42;
+    color: #ffba42;
+}

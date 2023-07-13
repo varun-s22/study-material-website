@@ -24,6 +24,13 @@
 .content button,.content h2{
     font-family: 'Handlee', cursive;
 }
+.content button{
+    font-size: 1.2vw;
+}
+.content button a{
+    text-decoration: none;
+    color: #EAEDEB;
+}
 .logo{
     width: 30vw;
     height: 20vw;

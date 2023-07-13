@@ -7,6 +7,9 @@
     align-items: center;
     font-family: 'Handlee', cursive;
 }
+.header h1{
+    font-family: "Handlee", cursive;
+}
 .header-link{
     color: #EAEDEB;
     font-weight: 500;
