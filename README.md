@@ -3,6 +3,13 @@
 This repo, is a assignment repository for Wised. Its a website for publishing your own study material / check out existing materials.
 This is a free to use, and open source website for the same motive
 
+## Features
+
+- Its a free and open source website for joining courses online for students.
+- If you're an instructor, you can also upload your courses for free.
+- Students can also get to download the material, for later use.
+- Its free of any sort of subscription, and authentication. Its FOR THE PEOPLE - BY THE PEOPLE
+
 ## Setup
 
 - Get the repository, via `git clone`.

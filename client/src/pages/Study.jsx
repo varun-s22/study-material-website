@@ -9,7 +9,7 @@ import "../styles/study.css";
 const Study = () => {
   const filters = {
     All: [],
-    Subject: ["Maths", "Science", "English"],
+    Subject: ["Maths", "Science", "Computer"],
     Grade: ["Grade X", "Grade XI", "Grade XII"],
     Category: ["Notes", "Past Papers", "Textbooks"],
   };

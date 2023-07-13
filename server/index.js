@@ -37,7 +37,6 @@ app.get("/", (req, res) => {
 
 app.get("/api/get-study-material", async (req, res) => {
   const query = req.query;
-  console.log(query);
   try {
     const studyMaterial = await Study.find(query);
     res.status(200).send({
