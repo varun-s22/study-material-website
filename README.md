@@ -30,6 +30,7 @@ A free to use, and open source website for publishing your own study material / 
   - The React server is hosted on port 5173, and so you can visit `localhost:5173` to check out the client
 
 ## Demo
+Here's a demo video of the code and website
 
 https://github.com/varun-s22/wised-study-material-assignment/assets/93476421/ec9f94cd-f1c1-4f63-bf9a-7385b20c8d05
 
